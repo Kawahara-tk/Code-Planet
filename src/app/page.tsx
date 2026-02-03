@@ -48,9 +48,6 @@ const NAV_ITEMS = [
 export default function Home() {
   return (
     <main className={styles.main}>
-      <SpecialText variant="bnl">あ</SpecialText>
-      <SpecialText variant="bwl">ぴゃ
-      </SpecialText>
       <div className={styles.contentWrapper}>
         {/* 左パネル: ステータス・ナビゲーション */}
         <div className={styles.leftPanel}>
