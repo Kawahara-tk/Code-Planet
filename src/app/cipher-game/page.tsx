@@ -14,13 +14,12 @@ import styles from "./page.module.css";
 
 import { useSearchParams } from "next/navigation";
 import { toMorseCode } from "@/lib/mappings/morse";
+import { Suspense } from "react";
 
-export default function CipherGame() {
+function CipherGameContent() {
   const searchParams = useSearchParams();
   const mode = searchParams.get('mode');
-  const isChallengeMode = mode === 'challenge' || mode === 'daily'; // Daily might imply specific settings too, but treating as challenge-like for now? 
-  // User only mentioned "Challenge Mode", let's stick to 'mode === challenge' for the specific behavior requested.
-  // Actually, 'daily' might just be a preset? Let's treat only 'challenge' for the selection screen.
+  const isChallengeMode = mode === 'challenge' || mode === 'daily'; 
   
   const [difficulty, setDifficulty] = useState<Difficulty>('word');
   const [cipherType, setCipherType] = useState<CipherType>('caesar');
@@ -77,8 +76,6 @@ export default function CipherGame() {
         loadNewProblem(difficulty, cipherType);
     }
   }, [isSetupComplete]); 
-  // We don't want to reload when difficulty changes during gameplay in challenge mode since it's locked, 
-  // but in normal mode we do.
   
   // Normal mode: reload on diff/type change
   useEffect(() => {
@@ -201,7 +198,6 @@ export default function CipherGame() {
         <div className={styles.headerContent}>
           <div className={styles.headerIcon}>
             {cipherType === 'caesar' ? <KeyIcon /> : <ShuffleIcon />} 
-            {/* Note: Icon logic simplified, could verify type for other icons if available */}
           </div>
           <h1 className={styles.title}>
             {cipherType === 'caesar' ? '暗号解読' : cipherType === 'anagram' ? 'アナグラム' : cipherType === 'braille' ? '点字解読' : 'モールス信号'}
@@ -224,7 +220,7 @@ export default function CipherGame() {
             difficulty={difficulty}
             onCipherTypeChange={setCipherType}
             onDifficultyChange={setDifficulty}
-            readOnly={mode === 'challenge'} // Disable controls in challenge mode
+            readOnly={mode === 'challenge'} 
           />
 
           {cipherType === 'caesar' && keyQuiz && (
@@ -294,5 +290,13 @@ export default function CipherGame() {
         </DraggablePopup>
       )}
     </main>
+  );
+}
+
+export default function CipherGame() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CipherGameContent />
+    </Suspense>
   );
 }
