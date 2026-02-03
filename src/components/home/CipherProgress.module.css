@@ -1,0 +1,87 @@
+.progressSection {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+}
+
+.progressTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.progressTitleIcon {
+  width: 18px;
+  height: 18px;
+  background: #17a2b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.progressTitleIcon svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+}
+
+.progressList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progressItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progressIcon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.progressIcon svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.progressBarContainer {
+  flex: 1;
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 3px;
+}
+
+.progressName {
+  color: var(--text-primary);
+}
+
+.progressPercent {
+  color: var(--color-primary-text);
+  font-weight: bold;
+}
+
+.progressBarBg {
+  height: 8px;
+  background: #ddd;
+  border: 1px solid var(--border-color);
+}
+
+.progressBarFill {
+  height: 100%;
+}

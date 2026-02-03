@@ -1,0 +1,36 @@
+.keyDisplay {
+  padding: 10px;
+  background: #fff9c4;
+  border: 1px solid #ffc107;
+  margin-bottom: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.keyDisplayLabel {
+  font-size: 14px;
+  color: #333;
+}
+
+.keyDisplayLabel strong {
+  font-size: 18px;
+  color: #d84315;
+  margin-left: 5px;
+}
+
+.hintButton {
+  padding: 5px 12px;
+  background: #ff9800;
+  color: white;
+  border: 1px solid #e65100;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hintButton:hover {
+  background: #e65100;
+}

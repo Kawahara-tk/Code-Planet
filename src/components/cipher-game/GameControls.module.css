@@ -1,0 +1,137 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--bg-card);
+  padding: 5px;
+  /* border, padding controlled by parent or optional */
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-secondary, #666);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.radioGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.radioButton {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 10px;
+  border: 2px solid var(--border-color, #eee);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: white;
+  color: var(--text-secondary, #666);
+}
+
+.radioButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Active State */
+.radioButton[data-active="true"] {
+  border-color: var(--color-primary, #17a2b8);
+  background: var(--color-primary-light, #e3f2fd);
+  color: var(--color-primary-text, #0056b3);
+}
+
+.radioButton input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.iconWrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f0f0f0;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.radioButton[data-active="true"] .iconWrapper {
+  background: var(--color-primary, #17a2b8);
+  color: white;
+}
+
+.radioLabel {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.radioSubLabel {
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+/* Read Only Mode */
+.controls[data-readonly="true"] {
+    opacity: 1; /* Keep fully opaque for readability */
+    pointer-events: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.controls[data-readonly="true"] .label {
+    display: none; /* Hide labels in read-only mode for cleaner look */
+}
+
+.controls[data-readonly="true"] .radioGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.controls[data-readonly="true"] .radioButton {
+    display: none; /* Hide all by default */
+}
+
+.controls[data-readonly="true"] .radioButton[data-active="true"] {
+    display: flex; /* Show only active */
+    flex-direction: row;
+    padding: 8px 16px;
+    width: auto;
+    border: 1px solid var(--color-primary);
+    background: var(--color-primary-light);
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+}
+
+.controls[data-readonly="true"] .iconWrapper {
+    width: 24px;
+    height: 24px;
+}
+
+.controls[data-readonly="true"] .iconWrapper svg {
+    width: 14px;
+    height: 14px;
+}
+

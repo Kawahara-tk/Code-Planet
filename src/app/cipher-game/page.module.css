@@ -1,0 +1,191 @@
+/* 暗号ゲームページ - シンプル版 */
+
+.main {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 15px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ヘッダー */
+.header {
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-card);
+  margin: 0 -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+
+.headerIcon {
+  width: 28px;
+  height: 28px;
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+.headerIcon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-primary-text);
+}
+
+.headerSubtitle {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* カード */
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  padding-bottom: 70px;
+}
+
+/* 戻るリンク */
+.backLink {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 12px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  color: var(--color-primary-text);
+}
+
+.backLinkIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.backLinkIcon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* タブレット・PC対応 (横画面レイアウト) */
+@media (min-width: 768px) {
+  .main {
+    max-width: 1000px;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header {
+    border-bottom: none;
+    background: transparent;
+    padding: 0 0 20px 0;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .headerContent {
+    justify-content: flex-start;
+  }
+
+  .card {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    padding-bottom: 20px;
+    overflow-y: auto; /* コンテンツが多すぎる場合はスクロール */
+  }
+
+  /* 左パネル: コントロール系 */
+  .leftPanel {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* 右パネル: ゲームエリア */
+  .rightPanel {
+    flex: 2;
+    min-width: 400px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .backLink {
+    position: static;
+    background: transparent;
+    border: none;
+    justify-content: flex-start;
+    padding: 0;
+    margin-top: auto;
+    width: auto;
+  }
+}
+/* セットアップ画面用 */
+.setupContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+    .setupContainer {
+        max-width: 800px;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    
+    .setupLeft {
+        flex: 1;
+    }
+    
+    .setupRight {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

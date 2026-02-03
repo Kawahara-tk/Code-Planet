@@ -1,0 +1,92 @@
+.stageCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.stageCard:hover {
+  background: #f0f0f0;
+}
+
+.stageIconWrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.stageIconWrapper svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.stageIconStory {
+  background: #4a90d9;
+}
+
+.stageIconDaily {
+  background: #e91e63;
+}
+
+.stageIconChallenge {
+  background: #ff9800;
+}
+
+.stageInfo {
+  flex: 1;
+}
+
+.stageName {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.stageDesc {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.stageProgress {
+  display: flex;
+  gap: 2px;
+  margin-top: 5px;
+}
+
+.progressStar {
+  width: 12px;
+  height: 12px;
+}
+
+.progressStar svg {
+  width: 100%;
+  height: 100%;
+}
+
+.progressStarActive svg {
+  fill: #ffc107;
+}
+
+.progressStarInactive svg {
+  fill: #ccc;
+}
+
+.stageArrow {
+  width: 16px;
+  height: 16px;
+  color: #999;
+}
+
+.stageArrow svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
